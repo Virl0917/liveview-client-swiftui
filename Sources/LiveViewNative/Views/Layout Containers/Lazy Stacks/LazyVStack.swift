@@ -30,7 +30,7 @@ struct LazyVStack<R: CustomRegistry>: View {
         case "trailing":
             return .trailing
         default:
-            fatalError("Invalid value '\(element.attributeValue(for: "alignment")!)' for alignment attribute of <v-stack>")
+            fatalError("Invalid value '\(element.attributeValue(for: "alignment")!)' for alignment attribute of <lazy-v-stack>")
         }
     }
     
