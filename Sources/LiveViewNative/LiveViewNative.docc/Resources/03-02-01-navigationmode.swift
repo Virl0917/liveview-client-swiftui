@@ -3,13 +3,13 @@ import LiveViewNative
 
 @MainActor
 struct ContentView: View {
-    @State var coordinator: LiveViewCoordinator<EmptyRegistry> = {
-        var config = LiveViewConfiguration()
+    @StateObject private var session: LiveSessionCoordinator<EmptyRegistry> = {
+        var config = LiveSessionConfiguration()
         config.navigationMode = .enabled
-        return LiveViewCoordinator(URL(string: "http://localhost:4000/cats")!, config: config)
+        return LiveSessionCoordinator(URL(string: "http://localhost:4000/cats")!, config: config)
     }()
 
     var body: some View {
-        LiveView(coordinator: coordinator)
+        LiveView(session: session)
     }
 }
